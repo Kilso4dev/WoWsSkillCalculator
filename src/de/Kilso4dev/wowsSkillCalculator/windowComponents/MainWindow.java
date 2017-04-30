@@ -48,7 +48,7 @@ public class MainWindow extends JFrame {
             } else {
                 value1.setVisible(false);
             }
-            value1.setBounds(250, 50, 1300, 750);
+            value1.setBounds(250, 50, 1500, 750);
             cMainWindow.add(value1);
         }
     }
