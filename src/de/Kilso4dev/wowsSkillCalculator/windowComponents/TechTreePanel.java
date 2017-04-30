@@ -9,10 +9,12 @@ class TechTreePanel extends JPanel {
     private final Font fAll = new Font("Times New Roman", Font.BOLD, 20);
 
     TechTreePanel(String nation){
-        this(nation, );
+        this(null, nation);
     }
     
-    TechTreePanel(String nation, JComponent src) {
+    TechTreePanel(JComponent src, String nation) {
+        src = src == null ? this : src;
+
         setNation(nation);
         this.setLayout(new GridLayout(11, 10, 30, 50));
 
