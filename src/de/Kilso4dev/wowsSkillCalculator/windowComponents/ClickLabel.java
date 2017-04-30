@@ -12,6 +12,31 @@ class ClickLabel extends JLabel {
     private HashSet<ActionListener> aListener = new HashSet<>();
     private String actionCommand;
 
+    public ClickLabel() {
+        super();
+    }
+
+    public ClickLabel(String title) {
+        super(title);
+    }
+
+    public ClickLabel(String title, int horizontalAlignment) {
+        super(title, horizontalAlignment);
+    }
+
+    public ClickLabel(String title, Icon icon, int horizontalAlignment) {
+        super(title, icon, horizontalAlignment);
+    }
+
+    public ClickLabel(Icon icon, int horizontalAlignment) {
+        super(icon, horizontalAlignment);
+    }
+
+    public ClickLabel(Icon icon) {
+        super(icon);
+    }
+
+
     public void addActionListener(ActionListener l) {
         aListener.add(l);
         super.addMouseListener(new MouseListener());
