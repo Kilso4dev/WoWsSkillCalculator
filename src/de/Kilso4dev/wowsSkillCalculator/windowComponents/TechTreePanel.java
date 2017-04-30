@@ -6,10 +6,26 @@ import java.awt.*;
 class TechTreePanel extends JPanel {
 
     private String nation = "";
-    private final Font fAll = new Font("Times New Roman", Font.BOLD, 30);
+    private final Font fAll = new Font("Times New Roman", Font.BOLD, 20);
 
     TechTreePanel(String nation){
         this.nation = nation;
+        this.setLayout(new GridLayout(11, 10, 30, 50));
+
+        this.add(new JLabel(""));
+        this.add(new JLabel("Tier I"));
+        this.add(new JLabel("Tier II"));
+        this.add(new JLabel("Tier III"));
+        this.add(new JLabel("Tier IV"));
+        this.add(new JLabel("Tier V"));
+        this.add(new JLabel("Tier VI"));
+        this.add(new JLabel("Tier VII"));
+        this.add(new JLabel("Tier VIII"));
+        this.add(new JLabel("Tier IX"));
+        this.add(new JLabel("Tier X"));
+        for (int i = 0; i < 110; i ++) {
+            this.add(new JLabel("Nummer " + i ));
+        }
 
         if (nation.equals("Arpeggio")) {
             createArpeggio();

@@ -14,6 +14,7 @@ public class MainWindow extends JFrame {
     private JButton skillButton;
     private JButton moduleButton;
     private TechTreePanel[] nationPanels = new TechTreePanel[11];
+    private final Font fAll = new Font("Times New Roman", Font.BOLD, 20);
 
 
     public MainWindow() {
@@ -47,24 +48,26 @@ public class MainWindow extends JFrame {
             } else {
                 value1.setVisible(false);
             }
-            value1.setBounds(200, 50, 1000, 650);
+            value1.setBounds(250, 50, 1300, 750);
             cMainWindow.add(value1);
         }
     }
 
     private void createModuleButton() {
         moduleButton = new JButton("Show all Modules");
-        moduleButton.setBounds(50, 400, 169, 49);
+        moduleButton.setBounds(50, 600, 169, 49);
         moduleButton.addActionListener(new ButtonListener());
         moduleButton.setVisible(true);
+        moduleButton.setFont(new Font("Times New Roman", Font.BOLD, 15));
         cMainWindow.add(moduleButton);
     }
 
     private void createSkillButton() {
         skillButton = new JButton("Show Captain Skills");
-        skillButton.setLocation(50, 370);
+        skillButton.setBounds(50, 680, 169, 49);
         skillButton.addActionListener(new ButtonListener());
         skillButton.setVisible(true);
+        skillButton.setFont(new Font("Times New Roman", Font.BOLD, 15));
         cMainWindow.add(skillButton);
     }
 
@@ -83,12 +86,13 @@ public class MainWindow extends JFrame {
         chooseNation[0].setSelected(true);
 
         chooseNationPanel = new JPanel(new GridLayout(11, 1));
-        chooseNationPanel.setLocation(50 , 50);
+        chooseNationPanel.setBounds(50 , 50, 200, 450);
         buttons = new ButtonGroup();
 
         for (JRadioButton value1 : chooseNation) {
             buttons.add(value1);
             chooseNationPanel.add(value1);
+            value1.setFont(fAll);
         }
         chooseNationPanel.setVisible(true);
         cMainWindow.add(chooseNationPanel);
