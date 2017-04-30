@@ -5,7 +5,7 @@ import de.Kilso4dev.wowsSkillCalculator.windowComponents.MainWindow;
 import javax.swing.*;
 import java.awt.*;
 
-public class Calculator_main {
+public class CalcMain {
     public static void main(String[] args) {
         MainWindow mainWindow = new MainWindow();
         mainWindow.setTitle("World of Warships Tech-Tree and Calculator");
