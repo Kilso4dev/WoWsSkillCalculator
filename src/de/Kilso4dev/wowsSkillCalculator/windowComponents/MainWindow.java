@@ -89,24 +89,42 @@ public class MainWindow extends JFrame {
         chooseNationPanel.setBounds(50 , 50, 200, 450);
         buttons = new ButtonGroup();
 
+        ButtonListener bl = new ButtonListener();
         for (JRadioButton value1 : chooseNation) {
             buttons.add(value1);
             chooseNationPanel.add(value1);
+            value1.addActionListener(bl);
             value1.setFont(fAll);
         }
         chooseNationPanel.setVisible(true);
         cMainWindow.add(chooseNationPanel);
+
     }
 
     private class ButtonListener implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent e) {
+
+            for (int i = 0; i < chooseNation.length; i++) {
+                if (e.getSource().equals(chooseNation[i])) {
+                    nationPanels[i].setVisible(true);
+
+                    for (int i2 = 0; i2 < nationPanels.length; i2++) {
+                        if (i2 != i) {
+                            nationPanels[i2].setVisible(false);
+                        }
+                    }
+                }
+            }
+
             if (e.getSource().equals(moduleButton)) {
                 new ModuleWindow();
             } else if (e.getSource().equals(skillButton)) {
                 new CaptainSkillWindow();
             }
         }
+
+
     }
 }
