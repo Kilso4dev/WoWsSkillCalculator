@@ -48,14 +48,14 @@ public class MainWindow extends JFrame {
             } else {
                 value1.setVisible(false);
             }
-            value1.setBounds(250, 50, 1500, 750);
+            value1.setBounds(225, 25, 1500, 800);
             cMainWindow.add(value1);
         }
     }
 
     private void createModuleButton() {
         moduleButton = new JButton("Show all Modules");
-        moduleButton.setBounds(50, 600, 169, 49);
+        moduleButton.setBounds(25, 600, 169, 49);
         moduleButton.addActionListener(new ButtonListener());
         moduleButton.setVisible(true);
         moduleButton.setFont(new Font("Times New Roman", Font.BOLD, 15));
@@ -64,7 +64,7 @@ public class MainWindow extends JFrame {
 
     private void createSkillButton() {
         skillButton = new JButton("Show Captain Skills");
-        skillButton.setBounds(50, 680, 169, 49);
+        skillButton.setBounds(25, 680, 169, 49);
         skillButton.addActionListener(new ButtonListener());
         skillButton.setVisible(true);
         skillButton.setFont(new Font("Times New Roman", Font.BOLD, 15));
@@ -86,7 +86,7 @@ public class MainWindow extends JFrame {
         chooseNation[0].setSelected(true);
 
         chooseNationPanel = new JPanel(new GridLayout(11, 1));
-        chooseNationPanel.setBounds(50 , 50, 200, 450);
+        chooseNationPanel.setBounds(25 , 50, 200, 450);
         buttons = new ButtonGroup();
 
         ButtonListener bl = new ButtonListener();

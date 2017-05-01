@@ -10,7 +10,7 @@ public class CalcMain {
         MainWindow mainWindow = new MainWindow();
         mainWindow.setTitle("World of Warships Tech-Tree and Calculator");
         mainWindow.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        mainWindow.setBounds((int) ((Toolkit.getDefaultToolkit().getScreenSize().getWidth()) - 1900 )/2,(int)( Toolkit.getDefaultToolkit().getScreenSize().getHeight() -1000) /2, 1900, 1000);
+        mainWindow.setBounds((int) ((Toolkit.getDefaultToolkit().getScreenSize().getWidth()) - 1750 )/2,(int)( Toolkit.getDefaultToolkit().getScreenSize().getHeight() -900) /2, 1750, 900);
         mainWindow.setResizable(false);
         mainWindow.setVisible(true);
     }
