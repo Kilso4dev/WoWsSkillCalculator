@@ -16,16 +16,16 @@ class ClickLabel extends JLabel {
         super();
     }
 
-    public ClickLabel(String title) {
-        super(title);
+    public ClickLabel(String text) {
+        super(text);
     }
 
-    public ClickLabel(String title, int horizontalAlignment) {
-        super(title, horizontalAlignment);
+    public ClickLabel(String text, int horizontalAlignment) {
+        super(text, horizontalAlignment);
     }
 
-    public ClickLabel(String title, Icon icon, int horizontalAlignment) {
-        super(title, icon, horizontalAlignment);
+    public ClickLabel(String text, Icon icon, int horizontalAlignment) {
+        super(text, icon, horizontalAlignment);
     }
 
     public ClickLabel(Icon icon, int horizontalAlignment) {
@@ -43,7 +43,7 @@ class ClickLabel extends JLabel {
     }
 
 
-
+    //getter and setter
     public void setActionCommand(String command) {
         this.actionCommand = command;
     }
@@ -53,6 +53,10 @@ class ClickLabel extends JLabel {
     }
 
 
+
+
+
+    //inner MouseListener Class
     private class MouseListener extends MouseAdapter {
         @Override
         public void mouseEntered(MouseEvent me) {
