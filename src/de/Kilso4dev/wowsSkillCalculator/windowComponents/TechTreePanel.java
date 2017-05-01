@@ -2,6 +2,8 @@ package de.Kilso4dev.wowsSkillCalculator.windowComponents;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 class TechTreePanel extends JPanel {
 
@@ -45,9 +47,11 @@ class TechTreePanel extends JPanel {
         } else if (nation.equals("Commonwealth")) {
             createCommonwealth(src);
         }
+        ShipLabelListener listener = new ShipLabelListener();
         for (Component cComponent : src.getComponents()) {
             if (cComponent instanceof ClickLabel) {
                 cComponent.setFont(fNormal);
+                ((ClickLabel) cComponent).addActionListener(listener);
             } else {
                 cComponent.setFont(fHeadline);
             }
@@ -258,7 +262,7 @@ class TechTreePanel extends JPanel {
         src.add(new ClickLabel("Colorado"));
         src.add(new ClickLabel("Pensacola"));
         src.add(new ClickLabel("Mahan"));
-        src.add(new ClickLabel("Atlanta, Ca"));
+        src.add(new ClickLabel("Atlanta, CA"));
         src.add(new ClickLabel("Sims, DD"));
         src.add(new ClickLabel("Saipan, CV"));
         src.add(new ClickLabel("Indiapolis, CA"));
@@ -319,7 +323,7 @@ class TechTreePanel extends JPanel {
         src.add(new ClickLabel("Svietlana"));
         src.add(new ClickLabel("Izyaslav"));
         src.add(new JLabel());
-        src.add(new ClickLabel("Imperator Nikolai I BB"));
+        src.add(new ClickLabel("Imperator Nikolai I, BB"));
         createMultipleLabels(src, 5, "");
 
         src.add(new JLabel("Tier V"));
@@ -612,7 +616,7 @@ class TechTreePanel extends JPanel {
         src.add(new JLabel("Tier VI"));
         src.add(new JLabel());
         src.add(new ClickLabel("La Galissonnière"));
-        src.add(new ClickLabel("Dunkerque, DD"));
+        src.add(new ClickLabel("Dunkerque, BB"));
         createMultipleLabels(src, 6, "");
 
         src.add(new JLabel("Tier VII"));
@@ -723,5 +727,15 @@ class TechTreePanel extends JPanel {
 
     private void setNation(String nation) {
         this.nation = nation;
+    }
+
+
+    private class ShipLabelListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (e.getSource() instanceof ClickLabel)
+                System.out.println("Ship " + ((ClickLabel) e.getSource()).getText());
+        }
     }
 }
