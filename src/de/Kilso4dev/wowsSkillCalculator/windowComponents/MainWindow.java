@@ -121,7 +121,11 @@ public class MainWindow extends JFrame {
             if (e.getSource().equals(moduleButton)) {
                 new ModuleWindow();
             } else if (e.getSource().equals(skillButton)) {
-                new CaptainSkillWindow();
+                CaptainSkillWindow captainSkillWindow = new CaptainSkillWindow();
+                captainSkillWindow.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+                captainSkillWindow.setBounds((int) ((Toolkit.getDefaultToolkit().getScreenSize().getWidth()) - 1280 )/2,(int)( Toolkit.getDefaultToolkit().getScreenSize().getHeight() -720) /2, 1280, 720);
+                captainSkillWindow.setResizable(false);
+                captainSkillWindow.setVisible(true);
             }
         }
 
